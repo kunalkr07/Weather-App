@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  color:#fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #023047;
+}
+
+nav{
+  text-align: center;
+  padding:15px auto;
+  position: relative;
+
+}
+nav>h3{
+  color:#fff;
+  position: relative;
+}
+
+
+
+.parent {
+  padding: 20px;
+  background: rgb(58,90,64);
+  background: linear-gradient(0deg, rgba(58,90,64,1) 0%, rgba(0,29,61,1) 55%);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+}
+
+.parent>img{
+  object-fit: contain;
+}
+
+header {
+  width: 100%;
+  padding: 8px;
+  height: 60px;
+}
+.search-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.search-box > input {
+  border-radius: 20px;
+  min-width: 250px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+  background-color: #ffffff2b;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 10px;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.search-box > button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff2b;
+  backdrop-filter: blur(10px);
+}
+
+/* contents */
+
+.temp{
+  padding:10px;
+ 
+  text-align: center;
+  margin-top:20px;
+}
+
+.temp>span{
+  font-size: 20px;
+  margin:10px 0px;
+}
+
+
+.temp>h2{
+    font-size: 3.5rem;
+}
+
+.temp>h2>span{
+  font-size: 3rem;
+  font-weight: 400;
+}
+.details{
+  padding:10px;
+  justify-content: space-around;
+  text-align: center;
+  margin:30px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon{
+    font-size: 40px;
+}
+
+.col{
+    margin:10px auto;
+    display: flex;
+    justify-content: space-around;
+    padding:10px;
+    width: 100%;
+    text-align: center;
+}
