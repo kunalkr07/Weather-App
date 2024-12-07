@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
+import cloudsImage from "../assets/clouds.jpg";
+import clearSkyImage from "../assets/sunny.jpg";
+import rainImage from "../assets/rain.jpg";
+import defaultImage from "../assets/default.jpg";
 import "./index.css";
-import cloudsImage from '../assets/clouds.jpg';
-import clearSkyImage from '../assets/sunny.jpg';
-import rainImage from '../assets/rain.jpg';
-import defaultImage from '../assets/default.jpg';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faWind, faWater } from "@fortawesome/free-solid-svg-icons";
 
 const Parent = () => {
   const [input, setInput] = useState("");
   const [weatherData, setWeatherData] = useState(null);
-  const [background,setBackground]=useState('');
+  const [background, setBackground] = useState("");
 
-
-// background image chnages according to description
+  // background image changes according to description
   const updateBackground = (description) => {
     let backgroundImage;
 
@@ -42,36 +40,41 @@ const Parent = () => {
 
       const description = convertedData.weather[0].description.toLowerCase();
       updateBackground(description);
-  
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }
-
   };
 
-// search handle
+  // search handle
   const handleSearch = (e) => {
     e.preventDefault();
     if (input.trim() !== "") {
       weatherReport(input);
     }
   };
-// handle change
+  // handle change
   const handleChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
   };
-// starts auto when page load
+  // starts auto when page load
   useEffect(() => {
     weatherReport();
   }, []);
 
   return (
-    <div className="parent" style={{ backgroundImage: background, backgroundSize: "cover", backgroundPosition: "center" }}>
+    <div
+      className="parent"
+      style={{
+        backgroundImage: background,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* navbar */}
-        <nav>
-          <h3>Kunal's weather app</h3>
-        </nav>
+      <nav>
+        <h3>Kunal's weather app</h3>
+      </nav>
 
       {/* Header */}
 
@@ -93,10 +96,15 @@ const Parent = () => {
       {weatherData ? (
         <div className="contents">
           <div className="temp">
-            <h2>{Math.round(weatherData.main.temp)} <span>°C</span></h2>
+            <h2>
+              {Math.round(weatherData.main.temp)} <span>°C</span>
+            </h2>
             <span>{weatherData.name}</span>
-            <p>{new Date(weatherData.dt * 1000) .toLocaleDateString("en-GB")
-    .replace(/\//g, "-")}</p>
+            <p>
+              {new Date(weatherData.dt * 1000)
+                .toLocaleDateString("en-GB")
+                .replace(/\//g, "-")}
+            </p>
           </div>
 
           <div className="details">
@@ -104,8 +112,7 @@ const Parent = () => {
               <FontAwesomeIcon icon={faWater} className="icon" />
               <div className="col-details">
                 <p>Humidity: {weatherData.main.humidity}%</p>
-                <p>{weatherData.weather[0].description
-                }</p>
+                <p>{weatherData.weather[0].description}</p>
               </div>
             </div>
 
