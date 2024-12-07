@@ -4,8 +4,6 @@ import clearSkyImage from "../assets/sunny.jpg";
 import rainImage from "../assets/rain.jpg";
 import defaultImage from "../assets/default.jpg";
 import "./index.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faWind, faWater } from "@fortawesome/free-solid-svg-icons";
 
 const Parent = () => {
   const [input, setInput] = useState("");
@@ -87,7 +85,8 @@ const Parent = () => {
             onChange={handleChange}
           />
           <button onClick={handleSearch}>
-            <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+          <i className="fa-brands fa-searchengin" />
+
           </button>
         </div>
       </header>
@@ -109,7 +108,9 @@ const Parent = () => {
 
           <div className="details">
             <div className="col">
-              <FontAwesomeIcon icon={faWater} className="icon" />
+            <i className="fa-solid fa-water icon" />
+
+            
               <div className="col-details">
                 <p>Humidity: {weatherData.main.humidity}%</p>
                 <p>{weatherData.weather[0].description}</p>
@@ -117,7 +118,7 @@ const Parent = () => {
             </div>
 
             <div className="col">
-              <FontAwesomeIcon icon={faWind} className="icon" />
+              <i className="fa-solid fa-wind icon" />
               <div className="col-details">
                 <p>Wind Speed</p>
                 <p>{weatherData.wind.speed} m/s</p>
